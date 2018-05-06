@@ -8,19 +8,21 @@ class Footer extends React.Component {
           <li>
             <a
               href="https://twitter.com/pisgahtechtutor"
+              target="_blank"
               className="icon alt fa-twitter"
             >
               <span className="label">Twitter</span>
             </a>
           </li>
           <li>
-            <a href="#" className="icon alt fa-facebook">
+            <a href="#" target="_blank" className="icon alt fa-facebook">
               <span className="label">Facebook</span>
             </a>
           </li>
           <li>
             <a
               href="https://www.instagram.com/pisgahtechtutoring/"
+              target="_blank"
               className="icon alt fa-instagram"
             >
               <span className="label">Instagram</span>
@@ -29,6 +31,7 @@ class Footer extends React.Component {
           <li>
             <a
               href="https://github.com/pisgah-tech-tutoring"
+              target="_blank"
               className="icon alt fa-github"
             >
               <span className="label">GitHub</span>
