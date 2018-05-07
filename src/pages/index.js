@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import Img from 'gatsby-image'
 
-import pic01 from '../assets/images/pic01.jpg'
+import missionImg from '../assets/images/mission.jpg'
 import pic02 from '../assets/images/pic02.jpg'
 import pic03 from '../assets/images/pic03.jpg'
 import pic04 from '../assets/images/pic04.jpg'
@@ -10,6 +11,9 @@ import pic04 from '../assets/images/pic04.jpg'
 class Homepage extends React.Component {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title
+    console.log(this.props.data)
+
+    const missionImg = this.props.data.missionImg.childImageSharp
 
     return (
       <div>
@@ -38,7 +42,7 @@ class Homepage extends React.Component {
             </div>
             <div className="col-6">
               <span className="image fit">
-                <img src={pic01} alt="" />
+                <Img sizes={missionImg.sizes} />
               </span>
             </div>
           </div>
@@ -211,6 +215,14 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+
+    missionImg: file(relativePath: { eq: "mission.jpg" }) {
+      childImageSharp {
+        sizes(maxWidth: 400) {
+          ...GatsbyImageSharpSizes_noBase64
+        }
       }
     }
   }
