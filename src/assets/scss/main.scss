@@ -965,28 +965,75 @@ button,
 
 /* Header */
 
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    z-index: 2;
+    transition: all .5s;
+
+    &.scrolled {
+        background-color: black
+    }
+
+    .mobile-logo {
+		width: 45px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .brand {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: none;
+        color: _palette(bg);
+        
+        strong {
+            color: _palette(bg);
+            padding-right: 3px;
+        }
+    }
+
+    .nav-items {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+ 
+        a {
+            margin-right: 15px;
+            border-bottom: none;
+            font-weight: bold;
+            color: _palette(bg);
+        }
+     }
+}
+
+
 #header {
     @include padding(9em, 0, (0, 0, _size(element-margin), 0));
     @include dark(#4686a0);
 
-    background-attachment: fixed,							fixed,							fixed;
+    background-attachment: fixed, fixed, fixed;
     background-image: url("../images/overlay2.png"), url("../images/overlay3.svg"), linear-gradient(45deg, _palette(accent1-alt) 5%, _palette(accent3-alt) 30%, _palette(accent6-alt));
-    background-position: top left,						center center,					center center;
-    background-size: auto,							cover,							cover;
+    background-position: top left,	center center,	center center;
+    background-size: auto,	cover,	cover;
     overflow: hidden;
     position: relative;
 	text-align: center;
 
-	.mobile-logo {
-		width: 50px;
-		position: absolute;
-		top: 15px;
-		left: 15px;
-	}
-	
 	.header-logo {
 		width: 20%;
-	}
+    } 
 
     h1 {
         margin: 0;

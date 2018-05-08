@@ -1,13 +1,11 @@
 import React from 'react'
 
 import logo from '../assets/images/logo.svg'
-import mobileLogo from '../assets/images/mobile_logo.svg'
 
 class Header extends React.Component {
   render() {
     return (
       <section id="header">
-        <img className="mobile-logo" src={mobileLogo} alt="" />
         <div className="inner">
           <img
             className="header-logo"

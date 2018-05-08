@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 
+import Header from '../components/Header'
 import missionImg from '../assets/images/mission.jpg'
 import pic02 from '../assets/images/pic02.jpg'
 import pic03 from '../assets/images/pic03.jpg'
@@ -22,7 +23,7 @@ class Homepage extends React.Component {
           <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         </Helmet>
-
+        <Header />
         <section id="mission" className="main style1">
           <div className="grid-wrapper">
             <div className="col-6">
