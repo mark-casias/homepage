@@ -14,11 +14,11 @@ class Footer extends React.Component {
               <span className="label">Twitter</span>
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="#" target="_blank" className="icon alt fa-facebook">
               <span className="label">Facebook</span>
             </a>
-          </li>
+          </li> */}
           <li>
             <a
               href="https://www.instagram.com/pisgahtechtutoring/"

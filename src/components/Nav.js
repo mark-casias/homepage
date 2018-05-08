@@ -11,9 +11,14 @@ var styles = {
     height: '30px',
     right: '36px',
     top: '36px',
+    background: '#373a47',
+    border: '10px solid #373a47',
+    boxSizing: 'content-box',
+    borderRadius: '10px',
   },
   bmBurgerBars: {
     background: 'white',
+    height: '15%',
   },
   bmCrossButton: {
     height: '24px',
@@ -66,6 +71,9 @@ class Nav extends React.Component {
         isOpen={this.state.menuOpen}
         onStateChange={state => this.handleStateChange(state)}
       >
+        <Link style={linkStyles} to="/" onClick={() => this.closeMenu()}>
+          home
+        </Link>
         <Link
           style={linkStyles}
           to="/#mission"

@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 import PageHeader from '../components/PageHeader'
 
-class Faq extends React.Component {
+class SignUp extends React.Component {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title
     console.log(this.props.data)
@@ -13,9 +13,13 @@ class Faq extends React.Component {
     return (
       <div>
         <Helmet>
-          <title>faq | {siteTitle}</title>
+          <title>sign up | {siteTitle}</title>
         </Helmet>
-        <PageHeader strong="frequently" title=" asked questions" />
+        <PageHeader
+          strong="sign"
+          title=" up"
+          description="fill out the information below and I will contact you quickly about beginning you programming instruction"
+        />
         <section id="mission" className="main style1">
           <div className="grid-wrapper">
             <div className="col-6">
@@ -43,14 +47,14 @@ class Faq extends React.Component {
   }
 }
 
-Faq.propTypes = {
+SignUp.propTypes = {
   route: React.PropTypes.object,
 }
 
-export default Faq
+export default SignUp
 
 export const pageQuery = graphql`
-  query FaqQuery {
+  query signUp {
     site {
       siteMetadata {
         title

@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 import '../assets/scss/main.scss'
 
 import Nav from '../components/nav'
-
 import Footer from '../components/Footer'
 
 class Template extends React.Component {

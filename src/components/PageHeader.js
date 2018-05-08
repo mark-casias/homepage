@@ -9,13 +9,15 @@ class PageHeader extends React.Component {
     return (
       <section id="header">
         <div className="inner">
+          <img
+            className="header-logo"
+            src={logo}
+            alt="pisgah tech tutoring logo"
+          />
           <h1>
-            <strong>frequently</strong> asked questions
+            <strong>{this.props.strong}</strong> {this.props.title}
           </h1>
-          <p>
-            Providing knowledge and guidance for the next <br /> generation of
-            western nc technology professionals.
-          </p>
+          <p>{this.props.description}</p>
         </div>
       </section>
     )
