@@ -24,7 +24,7 @@ class SignUp extends React.Component {
           <div className="grid-wrapper">
             <div className="col-6">
               <header className="major">
-                <h2>FAQ</h2>
+                <h2>Sign Up</h2>
               </header>
               <p>
                 The Pisgah Tech Tutoring mission is to provide valuable

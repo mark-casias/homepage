@@ -128,9 +128,9 @@ class Homepage extends React.Component {
               </p>
               <ul className="actions">
                 <li>
-                  <a href="#" className="button">
+                  <Link to="/sign-up" className="button">
                     More
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -147,9 +147,9 @@ class Homepage extends React.Component {
               </p>
               <ul className="actions">
                 <li>
-                  <a href="#" className="button">
+                  <Link to="/sign-up" className="button">
                     More
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -167,9 +167,9 @@ class Homepage extends React.Component {
               </p>
               <ul className="actions">
                 <li>
-                  <a href="#" className="button">
+                  <Link to="/sign-up" className="button">
                     More
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -217,7 +217,7 @@ export const pageQuery = graphql`
 
     missionImg: file(relativePath: { eq: "mission.jpg" }) {
       childImageSharp {
-        sizes(maxWidth: 400) {
+        sizes(maxWidth: 800) {
           ...GatsbyImageSharpSizes_noBase64
         }
       }
@@ -225,7 +225,7 @@ export const pageQuery = graphql`
 
     oneOnOneImg: file(relativePath: { eq: "desktop.jpeg" }) {
       childImageSharp {
-        sizes(maxWidth: 400) {
+        sizes(maxWidth: 500) {
           ...GatsbyImageSharpSizes_noBase64
         }
       }
@@ -233,7 +233,7 @@ export const pageQuery = graphql`
 
     smallGroupImg: file(relativePath: { eq: "smallgroup.jpeg" }) {
       childImageSharp {
-        sizes(maxWidth: 400) {
+        sizes(maxWidth: 500) {
           ...GatsbyImageSharpSizes_noBase64
         }
       }
@@ -241,7 +241,7 @@ export const pageQuery = graphql`
 
     summerImg: file(relativePath: { eq: "summer.jpeg" }) {
       childImageSharp {
-        sizes(maxWidth: 400) {
+        sizes(maxWidth: 500) {
           ...GatsbyImageSharpSizes_noBase64
         }
       }
