@@ -4,11 +4,12 @@ import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 
 import PageHeader from '../components/PageHeader'
+import SignUpForm from '../components/SignUpForm'
 
 class SignUp extends React.Component {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title
-    console.log(this.props.data)
+    const signUpImg = this.props.data.signUp.childImageSharp
 
     return (
       <div>
@@ -38,7 +39,12 @@ class SignUp extends React.Component {
               </p>
             </div>
             <div className="col-6">
-              <span className="image fit" />
+              <span className="image fit">
+                <Img sizes={signUpImg.sizes} />
+              </span>
+            </div>
+            <div className="col-12">
+              <SignUpForm />
             </div>
           </div>
         </section>
@@ -58,6 +64,14 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+
+    signUp: file(relativePath: { eq: "signup.jpg" }) {
+      childImageSharp {
+        sizes(maxWidth: 800) {
+          ...GatsbyImageSharpSizes_noBase64
+        }
       }
     }
   }

@@ -8,7 +8,7 @@ import PageHeader from '../components/PageHeader'
 class Faq extends React.Component {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title
-    console.log(this.props.data)
+    const faqImg = this.props.data.faq.childImageSharp
 
     return (
       <div>
@@ -23,18 +23,32 @@ class Faq extends React.Component {
                 <h2>FAQ</h2>
               </header>
               <p>
-                The Pisgah Tech Tutoring mission is to provide valuable
-                mentorship to 9-12th grade students in the Transylvania County,
-                NC area by teaching the programming fundamentals and modern
-                software development skills.
-              </p>
-              <p>
-                We promise to uphold this to all children interested, regardless
-                of background of any kind.
+                Have questions? Here are some questions you may have about the
+                programs.
               </p>
             </div>
             <div className="col-6">
-              <span className="image fit" />
+              <span className="image fit">
+                <Img sizes={faqImg.sizes} />
+              </span>
+            </div>
+            <div className="col-12">
+              <h3>What do I need to provide for the course?</h3>
+            </div>
+            <div className="col-12">
+              <h3>What is the structure of each lesson?</h3>
+            </div>
+            <div className="col-12">
+              <h3>Is there homework?</h3>
+            </div>
+            <div className="col-12">
+              <h3>Can't I already learn programming for free online?</h3>
+            </div>
+            <div className="col-12">
+              <h3>What if I can't figure out an assignment at home?</h3>
+            </div>
+            <div className="col-12">
+              <h3>Can you still help me learn after I finish a program?</h3>
             </div>
           </div>
         </section>
@@ -54,6 +68,14 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+
+    faq: file(relativePath: { eq: "faq.jpg" }) {
+      childImageSharp {
+        sizes(maxWidth: 800) {
+          ...GatsbyImageSharpSizes_noBase64
+        }
       }
     }
   }
