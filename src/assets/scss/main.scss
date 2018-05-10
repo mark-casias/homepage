@@ -175,6 +175,95 @@ pre {
 }
 
 
+.mobile-nav,
+.desktop-nav {
+    position: absolute;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 1;
+    color: white;
+
+    .nav-links-container {
+        list-style: none;
+    }
+
+    .nav-links {
+        a {
+            border-bottom: 0;
+        }
+    }
+}
+
+.desktop-nav {
+    .nav-links-container {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 0;
+
+        .nav-links {
+            margin-left: 30px;
+            display: flex;
+            align-items: center;
+            height: 60px;
+
+            .logo {
+                width: 40px;
+            }
+
+            a {
+             border-bottom: 0;
+             font-weight: bold;
+            }
+        }
+
+      
+    }
+}
+
+.mobile-logo {
+    display: none;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    
+    div[role="button"] {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 60px;
+        width: 100%;
+        font-size: 2rem;
+        padding-right: 15px;
+    }
+
+    .nav-links-container {
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        background: _palette(fg-bold);
+
+        .nav-links {
+            font-size: 2rem;
+        }
+
+        .logo-container {
+            display: none;
+        }
+    }
+}
+
+
 /* Section/Article */
 
 section, article {
@@ -1314,6 +1403,17 @@ button,
     h4 {
         font-size: 1em;
     }
+
+
+    .mobile-logo {
+        display: inline-block;
+        position: absolute;
+        width: 40px;
+        z-index: 11;
+        top: 10px;
+        left: 15px;
+    }
+
 
     /* List */
 

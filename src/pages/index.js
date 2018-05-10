@@ -128,9 +128,7 @@ class Homepage extends React.Component {
               </p>
               <ul className="actions">
                 <li>
-                  <Link to="/sign-up" className="button">
-                    More
-                  </Link>
+                  <button className="button disabled">Coming Soon</button>
                 </li>
               </ul>
             </div>
@@ -140,16 +138,14 @@ class Homepage extends React.Component {
               </span>
               <h3>Small Group</h3>
               <p>
-                This is our favorite way to learn programming. A bi-monthly
+                This is our favorite way to learn programming. A bi-monthly,
                 social, challenging program for groups up to 6 students. Meet
                 twice a month to learn what it's like to be on a modern software
                 development team. Like band practice for programming teens.
               </p>
               <ul className="actions">
                 <li>
-                  <Link to="/sign-up" className="button">
-                    More
-                  </Link>
+                  <button className="button disabled">Coming Soon</button>
                 </li>
               </ul>
             </div>
@@ -159,7 +155,7 @@ class Homepage extends React.Component {
               </span>
               <h3>Summer Camp</h3>
               <p>
-                Similar to our Small Group, but meets once a week for 9-weeks.
+                Similar to our Small Group, but meets twice a week for 9-weeks.
                 Limited to 6 students, we build a foundation of computer
                 programming and each student finishes with a self-built website.
                 Fast-paced, fun and made for the teen looking for a mentally
@@ -167,9 +163,7 @@ class Homepage extends React.Component {
               </p>
               <ul className="actions">
                 <li>
-                  <Link to="/sign-up" className="button">
-                    More
-                  </Link>
+                  <button className="button disabled">Coming Soon</button>
                 </li>
               </ul>
             </div>
@@ -184,9 +178,9 @@ class Homepage extends React.Component {
             <p>Contact us with your questions and we'll be happy to help.</p>
             <ul className="actions uniform">
               <li>
-                <Link to="/sign-up" className="button special">
-                  Sign Up
-                </Link>
+                <button className="button special disabled">
+                  Sign Up (Coming soon!)
+                </button>
               </li>
               <li>
                 <Link to="/faq" className="button">

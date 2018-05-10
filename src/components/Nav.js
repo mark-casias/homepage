@@ -1,103 +1,54 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import { slide as Menu } from 'react-burger-menu'
+import ResponsiveMenu from 'react-responsive-navbar'
+import { TiThMenu, TiTimes } from 'react-icons/lib/ti'
 import mobileLogo from '../assets/images/mobile_logo.svg'
-
-var styles = {
-  bmBurgerButton: {
-    position: 'fixed',
-    width: '36px',
-    height: '30px',
-    right: '36px',
-    top: '36px',
-    background: '#373a47',
-    border: '10px solid #373a47',
-    boxSizing: 'content-box',
-    borderRadius: '10px',
-  },
-  bmBurgerBars: {
-    background: 'white',
-    height: '15%',
-  },
-  bmCrossButton: {
-    height: '24px',
-    width: '24px',
-  },
-  bmCross: {
-    background: 'white',
-  },
-  bmMenu: {
-    background: '#373a47',
-    padding: '1.5em 1em 0',
-    fontSize: '1.15em',
-  },
-  bmMorphShape: {
-    fill: '#373a47',
-  },
-  bmItemList: {
-    color: 'white',
-    padding: '0.8em',
-  },
-  bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)',
-  },
-}
-
-var linkStyles = {
-  border: 'none',
-  paddingTop: '.5rem',
-  paddingBottom: '.5rem',
-}
 
 class Nav extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
-      menuOpen: false,
+      isOpen: false,
     }
-  }
-  handleStateChange(state) {
-    this.setState({ menuOpen: state.isOpen })
-  }
-  closeMenu = () => {
-    this.setState({ menuOpen: false })
   }
   render() {
     return (
-      <Menu
-        styles={styles}
-        right
-        isOpen={this.state.menuOpen}
-        onStateChange={state => this.handleStateChange(state)}
-      >
-        <Link style={linkStyles} to="/" onClick={() => this.closeMenu()}>
-          home
+      <div>
+        <Link to="/">
+          <img src={mobileLogo} className="mobile-logo" alt="" />
         </Link>
-        <Link
-          style={linkStyles}
-          to="/#mission"
-          onClick={() => this.closeMenu()}
-        >
-          mission
-        </Link>
-        <Link
-          style={linkStyles}
-          to="/#who-and-why"
-          onClick={() => this.closeMenu()}
-        >
-          about
-        </Link>
-        <Link style={linkStyles} to="/#how" onClick={() => this.closeMenu()}>
-          programs
-        </Link>
-        <Link style={linkStyles} to="/faq" onClick={() => this.closeMenu()}>
-          faq
-        </Link>
-        <Link style={linkStyles} to="sign-up" onClick={() => this.closeMenu()}>
-          sign up
-        </Link>
-      </Menu>
+
+        <ResponsiveMenu
+          menuOpenButton={<TiThMenu />}
+          menuCloseButton={<TiTimes />}
+          changeMenuOn="736px"
+          largeMenuClassName="desktop-nav"
+          smallMenuClassName="mobile-nav"
+          menu={
+            <ul className="nav-links-container">
+              <li className="nav-links logo-container">
+                <Link to="/">
+                  <img src={mobileLogo} className="logo" alt="" />
+                </Link>
+              </li>
+              <li className="nav-links">
+                <Link to="/#mission">mission</Link>
+              </li>
+              <li className="nav-links">
+                <Link to="/#who-and-why">who and why</Link>
+              </li>
+              <li className="nav-links">
+                <Link to="/#how">programs</Link>
+              </li>
+              <li className="nav-links">
+                <Link to="/faq">faq</Link>
+              </li>
+            </ul>
+          }
+        />
+      </div>
     )
   }
 }
