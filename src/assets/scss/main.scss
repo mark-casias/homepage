@@ -211,6 +211,7 @@ pre {
 
             .logo {
                 width: 40px;
+                padding-top: 15px;
             }
 
             a {
@@ -233,6 +234,7 @@ pre {
     width: 100%;
     height: auto;
     z-index: 10;
+
     
     div[role="button"] {
         display: flex;
@@ -242,6 +244,12 @@ pre {
         width: 100%;
         font-size: 2rem;
         padding-right: 15px;
+    }
+
+    &.open {
+        div[role="button"] {
+            background-color: black;
+        }
     }
 
     .nav-links-container {
@@ -255,10 +263,12 @@ pre {
 
         .nav-links {
             font-size: 2rem;
+            font-weight: bold;
         }
 
         .logo-container {
             display: none;
+            height: 0;
         }
     }
 }
