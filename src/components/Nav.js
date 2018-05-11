@@ -1,103 +1,119 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
-import { slide as Menu } from 'react-burger-menu'
+import ScrollLock from 'react-scrolllock'
+import { TiThMenu, TiTimes } from 'react-icons/lib/ti'
 import mobileLogo from '../assets/images/mobile_logo.svg'
+import styled from 'styled-components'
 
-var styles = {
-  bmBurgerButton: {
-    position: 'fixed',
-    width: '36px',
-    height: '30px',
-    right: '36px',
-    top: '36px',
-    background: '#373a47',
-    border: '10px solid #373a47',
-    boxSizing: 'content-box',
-    borderRadius: '10px',
-  },
-  bmBurgerBars: {
-    background: 'white',
-    height: '15%',
-  },
-  bmCrossButton: {
-    height: '24px',
-    width: '24px',
-  },
-  bmCross: {
-    background: 'white',
-  },
-  bmMenu: {
-    background: '#373a47',
-    padding: '1.5em 1em 0',
-    fontSize: '1.15em',
-  },
-  bmMorphShape: {
-    fill: '#373a47',
-  },
-  bmItemList: {
-    color: 'white',
-    padding: '0.8em',
-  },
-  bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)',
-  },
-}
+const SmallMenu = styled.div`
+  display: none;
+  @media (max-width: ${props => props.breakpoint}) {
+    display: flex;
+  }
+`
 
-var linkStyles = {
-  border: 'none',
-  paddingTop: '.5rem',
-  paddingBottom: '.5rem',
+const LargeMenu = styled.div`
+  @media (max-width: ${props => props.breakpoint}) {
+    display: none;
+  }
+`
+
+const Menu = ({ handleClick }) => {
+  return (
+    <ul className="nav-links-container">
+      <li className="nav-links logo-container">
+        <Link to="/" onClick={handleClick}>
+          <img src={mobileLogo} className="logo" alt="" />
+        </Link>
+      </li>
+      <li className="nav-links">
+        <Link to="/#mission" onClick={handleClick}>
+          mission
+        </Link>
+      </li>
+      <li className="nav-links">
+        <Link to="/#who-and-why" onClick={handleClick}>
+          who and why
+        </Link>
+      </li>
+      <li className="nav-links">
+        <Link to="/#how" onClick={handleClick}>
+          programs
+        </Link>
+      </li>
+      <li className="nav-links">
+        <Link to="/faq" onClick={handleClick}>
+          faq
+        </Link>
+      </li>
+    </ul>
+  )
 }
 
 class Nav extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
-      menuOpen: false,
+      showMenu: false,
+      scrollLock: false,
+      breakpoint: '736px',
     }
   }
-  handleStateChange(state) {
-    this.setState({ menuOpen: state.isOpen })
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize)
   }
-  closeMenu = () => {
-    this.setState({ menuOpen: false })
+  componentWillUnmount() {
+    window.addEventListener('resize', null)
   }
+
+  handleResize = () => {
+    if (window.innerWidth >= 736) {
+      this.setState({
+        showMenu: false,
+        scrollLock: false,
+      })
+    }
+  }
+
+  handleClick = () => {
+    this.setState({
+      showMenu: !this.state.showMenu,
+      scrollLock: !this.state.scrollLock,
+    })
+  }
+
   render() {
     return (
-      <Menu
-        styles={styles}
-        right
-        isOpen={this.state.menuOpen}
-        onStateChange={state => this.handleStateChange(state)}
-      >
-        <Link style={linkStyles} to="/" onClick={() => this.closeMenu()}>
-          home
+      <div>
+        <Link to="/">
+          <img src={mobileLogo} className="mobile-logo" alt="" />
         </Link>
-        <Link
-          style={linkStyles}
-          to="/#mission"
-          onClick={() => this.closeMenu()}
+        <LargeMenu className="desktop-nav" breakpoint={this.state.breakpoint}>
+          <Menu handleClick={this.handleClick} />
+        </LargeMenu>
+        <SmallMenu
+          className={`mobile-nav ${this.state.showMenu ? 'open' : ''}`}
+          breakpoint={this.state.breakpoint}
         >
-          mission
-        </Link>
-        <Link
-          style={linkStyles}
-          to="/#who-and-why"
-          onClick={() => this.closeMenu()}
-        >
-          about
-        </Link>
-        <Link style={linkStyles} to="/#how" onClick={() => this.closeMenu()}>
-          programs
-        </Link>
-        <Link style={linkStyles} to="/faq" onClick={() => this.closeMenu()}>
-          faq
-        </Link>
-        <Link style={linkStyles} to="sign-up" onClick={() => this.closeMenu()}>
-          sign up
-        </Link>
-      </Menu>
+          {!this.state.showMenu ? (
+            <div role="button">
+              <TiThMenu onClick={this.handleClick} />
+            </div>
+          ) : (
+            <div role="button">
+              <TiTimes onClick={this.handleClick} />
+            </div>
+          )}
+          {this.state.showMenu ? (
+            <div>
+              <Menu handleClick={this.handleClick} />
+            </div>
+          ) : null}
+        </SmallMenu>
+        {this.state.scrollLock ? <ScrollLock /> : null}
+      </div>
     )
   }
 }
