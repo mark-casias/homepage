@@ -78,10 +78,12 @@ class Nav extends React.Component {
   }
 
   handleClick = () => {
-    this.setState({
-      showMenu: !this.state.showMenu,
-      scrollLock: !this.state.scrollLock,
-    })
+    if (window.innerWidth < 736) {
+      this.setState({
+        showMenu: !this.state.showMenu,
+        scrollLock: !this.state.scrollLock,
+      })
+    }
   }
 
   render() {
