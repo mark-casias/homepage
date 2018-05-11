@@ -33,7 +33,7 @@ const Menu = ({ handleClick }) => {
       </li>
       <li className="nav-links">
         <Link to="/#who-and-why" onClick={handleClick}>
-          who and why
+          about
         </Link>
       </li>
       <li className="nav-links">
