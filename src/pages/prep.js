@@ -30,7 +30,7 @@ class Prep extends React.Component {
                 work done before, the far easier the learning curve.
               </p>
               <h3>
-                <a href="#">
+                <a href="https://github.com/pisgah-tech-tutoring/prepwork">
                   Click here for an up to date list of prep work
                   recommendations.
                 </a>

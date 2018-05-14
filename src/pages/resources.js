@@ -33,7 +33,9 @@ class Resources extends React.Component {
                 FREE resources for learning programming.
               </p>
               <h3>
-                <a href="#">Click here for an up to date list of resources.</a>
+                <a href="https://github.com/pisgah-tech-tutoring/resources">
+                  Click here for an up to date list of resources.
+                </a>
               </h3>
             </div>
           </div>
