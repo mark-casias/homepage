@@ -19,7 +19,7 @@ class SignUp extends React.Component {
         <PageHeader
           strong="sign"
           title=" up"
-          description="fill out the information below and I will contact you quickly about beginning you programming instruction"
+          description="fill out the information below and I will contact you quickly about beginning your programming instruction"
         />
         <section id="mission" className="main style1">
           <div className="grid-wrapper">

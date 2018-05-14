@@ -35,7 +35,7 @@ export default class SignUpForm extends React.Component {
         <form
           name="contact"
           method="post"
-          action="/thanks/"
+          action="/sign-up-success/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}

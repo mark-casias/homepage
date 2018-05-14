@@ -80,10 +80,10 @@ class Homepage extends React.Component {
                 schools don't have the resources to foster their curiosity?
               </p>
               <p>
-                We hope to help teenagers and families that need help
-                kickstarting or developing their programming career right in
-                their backyard. No one, no matter where they live, should miss
-                the opportunity to learn this valuable skill.
+                We hope to help teenagers and families kickstart and develop
+                their programming career right in their backyard. No one, no
+                matter where they live, should miss the opportunity to learn
+                this valuable skill.
               </p>
               <header className="major">
                 <h2>Who We Are</h2>
@@ -155,7 +155,7 @@ class Homepage extends React.Component {
               </span>
               <h3>Summer Camp</h3>
               <p>
-                Similar to our Small Group, but meets twice a week for 9-weeks.
+                Similar to our Small Group, but meets twice a week for 8-weeks.
                 Limited to 6 students, we build a foundation of computer
                 programming and each student finishes with a self-built website.
                 Fast-paced, fun and made for the teen looking for a mentally
